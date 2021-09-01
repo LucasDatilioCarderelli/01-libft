@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldatilio <ldatilio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 20:35:31 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/08/31 22:36:11 by ldatilio         ###   ########.fr       */
+/*   Created: 2021/08/31 16:53:03 by ldatilio          #+#    #+#             */
+/*   Updated: 2021/08/31 22:25:55 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+unsigned int	ft_strlen(char *str)
 {
-	if ((c >= 'A' && c <= 'Z') \
-	|| (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
