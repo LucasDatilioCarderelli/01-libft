@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 21:34:00 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/02 10:07:32 by ldatilio         ###   ########.fr       */
+/*   Created: 2021/09/02 19:44:06 by ldatilio          #+#    #+#             */
+/*   Updated: 2021/09/02 20:21:51 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + ('a' - 'A'));
-	return (c);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (little[0] == '\0')
+		return ((char *) big);
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (big[i + j] != '\0' && big[i + j] == little[j] && i + j < len)
+		{
+			if (little[j + 1] == '\0')
+			{
+				return ((char *) big + i);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldatilio <ldatilio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:11:04 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/08/31 22:48:45 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/02 15:51:26 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
+	unsigned int	destlen;
 	unsigned int	i;
-	unsigned int	len_dest;
-	unsigned int	len_total;
 
-	len_dest = ft_strlen(dest);
-	len_total = len_dest + ft_strlen(src);
-	if (size > len_dest)
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	destlen = ft_strlen(dest);
+	i = 0;
+	while (src[i] != '\0' && destlen + i < size - 1)
 	{
-		i = -1;
-		while (src[++i] != 0 && len_dest < size - 1)
-			dest[len_dest + i] = src[i];
-		dest[len_dest + i] = '\0';
-		return (len_total);
+		dest[destlen + i] = src[i];
+		i++;
 	}
-	return (ft_strlen(src) + size);
+	dest[destlen + i] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }
