@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/01 10:39:53 by ldatilio          #+#    #+#              #
-#    Updated: 2021/09/02 22:04:44 by ldatilio         ###   ########.fr        #
+#    Updated: 2021/09/03 14:16:10 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS	:=	$(SRCS:.c=.o)
 
 all: 		$(NAME)
 
-$(NAME): 	$(OBJS) $(INCLUDE) 
+$(NAME): 	$(OBJS) $(INCLUDE)
 			ar -rcs $(NAME) $(OBJS)
 			ranlib $(NAME)
 
@@ -42,7 +42,7 @@ clean:
 
 fclean: 	clean
 			rm -f $(NAME)
-	
+
 re:			fclean all
 
 .PHONY: 	all clean fclean re
