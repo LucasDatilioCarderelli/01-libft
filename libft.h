@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/03 13:46:19 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/03 19:06:42 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char*restrict dst, char*restrict src, size_t destsize);
 size_t	ft_strlcpy(char*restrict dst, char*restrict src, size_t destsize);
 
-// char 		*strchr(const char *str, int c);
-// char 		*strrchr(const char *str, int c);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
