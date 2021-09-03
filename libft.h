@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/03 19:06:42 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/04 13:21:10 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_isalnum(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *str);
-// char			*ft_itoa(int n);
+char	*ft_itoa(int n);
 // str
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char*restrict dst, char*restrict src, size_t destsize);
@@ -35,9 +35,19 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+// mem
+void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_bzero(void *s, size_t n);
 
-// ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c
-// ft_memchr.c ft_memcmp.c ft_strdup.c ft_calloc.c ft_itoa.c
+char	*ft_strdup(const char *s);
+void	*ft_calloc(size_t nmemb, size_t size);
+
+// ft_itoa.c
 // ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 // ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c
 #endif
