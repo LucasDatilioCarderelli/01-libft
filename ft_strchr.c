@@ -6,9 +6,11 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 18:53:11 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/03 19:19:32 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/07 14:14:46 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
