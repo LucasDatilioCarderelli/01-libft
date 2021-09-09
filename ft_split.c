@@ -6,35 +6,67 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:35:12 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/07 20:55:57 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/08 22:06:46 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	sepcounter(char const *s, char c)
+{
+	size_t	count;
+	size_t	i;
+
+	count = 0;
+	i = 0;
+	while (s[i] == c && s[i] != '\0')
+		i++;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			count++;
+			while (s[i + 1] == c && s[i + 1] != '\0')
+				i++;
+		}
+		i++;
+	}
+	if (s[i - 1] != c)
+		count++;
+	return (count);
+}
+
+static void	fillarr(char **arr, size_t len_arr, char const *s, char c)
+{
+	size_t	idx;
+	char	*start;
+	size_t	len_word;
+
+	idx = 0;
+	start = (char *)s;
+	while (idx < len_arr)
+	{
+		len_word = 0;
+		while (*start == c && *start != 0)
+			start++;
+		while (start[len_word] != c && start[len_word] != '\0')
+			len_word++;
+		arr[idx] = ft_substr(start, 0, len_word);
+		start += len_word;
+		idx++;
+	}
+	arr[idx] = 0;
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
 	size_t	len_arr;
-	size_t	start;
-	size_t	end;
+	char	**arr;
 
-	if (s == NULL || c == '\0')
+	if (!(s || c))
 		return (0);
-	start = 0;
-	end = 0;
-	len_arr = 0;
-	arr = NULL;
-	while (*s != '\0')
-	{
-		if (*s == c)
-		{
-			arr[len_arr] = ft_substr(s, start, end - start);
-			len_arr++;
-			start = end;
-		}
-		s++;
-		end++;
-	}
+	len_arr = sepcounter(s, c);
+	arr = malloc(sizeof(char *) * (len_arr + 1));
+	fillarr(arr, len_arr, s, c);
 	return (arr);
 }
