@@ -6,13 +6,14 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/06 20:31:10 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:04:17 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 
 /* ********************************* Part 1 ********************************* */
@@ -280,7 +281,7 @@ void	ft_putchar_fd(char c, int fd);
 /**	@brief	Outputs the string ’s’ to the given filedescriptor.
  *	@param	s The string to output
  *	@param	fd The file descriptor on which to write */
-void	ft_putstr_fd(char const *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 /**	@brief	Outputs the string ’s’ to the given filedescriptor,
  *			followed by a newline.
