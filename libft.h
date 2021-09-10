@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/09 15:04:17 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 19:05:39 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int		ft_tolower(int c);
  * 	@return int Returns converted uppercase character. */
 int		ft_toupper(int c);
 
-/**	@brief	converts the initial portion of the string pointed to by nptr to int.
- *	@param str Pointer to the area of memory of the string to be converted
+/**	@brief	converts the initial portion of the string pointed to by str to int.
+ *	@param	str Pointer to the area of memory of the string to be converted
  *	@return int The converted value or 0 on error */
 int		ft_atoi(const char *str);
 
@@ -78,9 +78,9 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 
 /**	@brief	Copies n bytes from memory area src to memory area dest.
- *	@param	dest Destination pointer of memory area
- *	@param	src	Source pointer of memory area
- *	@param	n Buffer size in bytes */
+ *	@param	dest	Destination pointer of memory area
+ *	@param	src		Source pointer of memory area
+ *	@param	n		Buffer size in bytes */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /*
@@ -96,9 +96,9 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 */
 
 /**	@brief	Copies n bytes from memory area src to memory area dest.
- *	@param	dest Destination pointer of memory area
- *	@param	src Source pointer of memory area
- *	@param	n Buffer size in bytes
+ *	@param	dest	Destination pointer of memory area
+ *	@param	src		Source pointer of memory area
+ *	@param	n		Buffer size in bytes
  *	@return	void* Returns a pointer to dest. */
 void	*ft_memmove(void *dest, const void *src, size_t len);
 
@@ -113,9 +113,9 @@ void	*ft_memchr(const void *s, int c, size_t n);
 
 /**	@brief	compares the first n bytes (each interpreted
  * 			as unsigned char) of the memory areas s1 and s2.
- *	@param	s1 Pointer to the first memory area to be compared
- *	@param	s2 Pointer to the second memory area to be compared
- *	@param	n Buffer size in bytes
+ *	@param	s1	Pointer to the first memory area to be compared
+ *	@param	s2	Pointer to the second memory area to be compared
+ *	@param	n	Buffer size in bytes
  *	@return	int Returns an integer less than, equal to, or greater than zero
  *  		if the first n bytes of s1 is found, respectively, to be less than,
  * 			to match, or be greater than the first n bytes of s2. */
@@ -130,22 +130,22 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 
 /**	@brief	Copies up to size - 1 characters from
- * 			the NUL-terminated string src to dst, NUL-terminating the result.
- * @param	dst	Pointer to the destination area of memory
- * @param	src	Pointer to the source area of memory
- * @param	size Buffer size in bytes
+ * 			the NUL-terminated string src to dest, NUL-terminating the result.
+ * @param	dest	Pointer to the destination area of memory
+ * @param	src		Pointer to the source area of memory
+ * @param	size	Buffer size in bytes
  * @return	size_t Returns the length of src. */
-size_t	ft_strlcpy(char *dst, char *src, size_t destsize);
+size_t	ft_strlcpy(char *dest, char *src, size_t destsize);
 
-/**	@brief	Appends the NUL-terminated string src to the end of dst.
- * 			It will append at most size - strlen(dst) - 1 bytes,
+/**	@brief	Appends the NUL-terminated string src to the end of dest.
+ * 			It will append at most size - strlen(dest) - 1 bytes,
  * 			NUL-terminating the result.
- * @param 	dest Pointer to the destination area of memory
- * @param 	src	Pointer to the source area of memory
- * @param 	size Buffer size in bytes
+ * @param 	dest	Pointer to the destination area of memory
+ * @param 	src		Pointer to the source area of memory
+ * @param 	size	Buffer size in bytes
  * @return 	size_t Return the total length of the string,
- * 			that is the initial length of dst plus the length of src.*/
-size_t	ft_strlcat(char *dst, char *src, size_t destsize);
+ * 			that is the initial length of dest plus the length of src.*/
+size_t	ft_strlcat(char *dest, char *src, size_t destsize);
 
 //	str		********************************************************************
 
@@ -169,9 +169,9 @@ char	*ft_strrchr(const char *s, int c);
 /**	@brief	Locates the first occurrence of the null-terminated string little in
  * 			the string big, where not more than `len` characters are searched.
  * 			Characters that appear after a `\\0` character are not searched.
- *	@param big		String to be searched by `little`
- *	@param little	String to search in `big`
- *	@param len		Number of bytes to search
+ *	@param	big		String to be searched by `little`
+ *	@param	little	String to search in `big`
+ *	@param	len		Number of bytes to search
  *	@return	char* If little is an empty string, big is returned. If little
  *			occurs nowhere in big, NULL is returned. otherwise a pointer to the
  *			first character of the first occurrence of little is returned.*/
@@ -179,9 +179,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 /**	@brief	Compares the two strings s1 and s2.
  *			The locale is not taken into account
- *	@param	s1 Pointer to the area of memory of the first string
- *	@param	s2 Pointer to the area of memory of the second string
- *	@param	n Buffer size in bytes to compare both strings
+ *	@param	s1	Pointer to the area of memory of the first string
+ *	@param	s2	Pointer to the area of memory of the second string
+ *	@param	n	Buffer size in bytes to compare both strings
  *	@return	int Return an integer less than, equal to, or greater than zero
  * 			if s1 (or the first n bytes thereof) is found, respectively,
  * 			to be less than, to match, or be greater than s2. */
@@ -216,9 +216,9 @@ char	*ft_strdup(const char *s1);
 /**	@brief	Allocates (with malloc(3)) and returns a substring from
  * 			the string ’s’. The substring begins at index ’start’
  * 			and is of maximum size ’len’.
- *	@param	s The string from which to create the substring.
- *	@param	start The start index of the substring in the string’s’.
- *	@param	len The maximum length of the substring.
+ *	@param	s		The string from which to create the substring.
+ *	@param	start	The start index of the substring in the string’s’.
+ *	@param	len		The maximum length of the substring.
  *	@return char* Returns the substring. NULL if the allocation fails. */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
@@ -232,8 +232,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 /**	@brief 	Allocates (with malloc(3)) and returns a copy of ’s1’
  * 			with the characters specified in ’set’ removed from
  * 			the beginning and the end of the string.
- *	@param	s1 The string to be trimmed
- *	@param	set The set of characters to trim
+ *	@param	s1	The string to be trimmed
+ *	@param	set	The set of characters to trim
  *	@return	char* Returns the trimmed string,
  *			or NULL if allocation fails. */
 char	*ft_strtrim(char const *s1, char const *set);
@@ -241,8 +241,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 /**	@brief	Allocates (with malloc(3)) and returns an array of strings
  * 			obtained by splitting ’s’ using the character ’c’ as a delimiter.
  *			The array must be ended by a NULL pointer.
- *	@param s The string to be split
- *	@param c The delimiter character
+ *	@param	s The string to be split
+ *	@param	c The delimiter character
  *	@return char** Returns a matrix of two splitted arrays,
  *			else returns NULL if allocation fails. */
 char	**ft_split(char const *s, char c);
@@ -274,24 +274,24 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 // 	put		********************************************************************
 
 /**	@brief	Outputs the character ’c’ to the given filedescriptor.
- *	@param	c The character to output
- *	@param	fd The file descriptor on which to write */
+ *	@param	c	The character to output
+ *	@param	fd	The file descriptor on which to write */
 void	ft_putchar_fd(char c, int fd);
 
 /**	@brief	Outputs the string ’s’ to the given filedescriptor.
- *	@param	s The string to output
- *	@param	fd The file descriptor on which to write */
+ *	@param	s	The string to output
+ *	@param	fd	The file descriptor on which to write */
 void	ft_putstr_fd(char *s, int fd);
 
 /**	@brief	Outputs the string ’s’ to the given filedescriptor,
  *			followed by a newline.
- *	@param	s The string to output
- *	@param	fd The file descriptor on which to write */
+ *	@param	s	The string to output
+ *	@param	fd	The file descriptor on which to write */
 void	ft_putendl_fd(char *s, int fd);
 
 /**	@brief Outputs the integer ’n’ to the given filedescriptor.
- *	@param n The integer to output
- *	@param fd The file descriptor on which to write */
+ *	@param n	The integer to output
+ *	@param fd	The file descriptor on which to write */
 void	ft_putnbr_fd(int n, int fd);
 
 /* ********************************* BONUS ********************************** */

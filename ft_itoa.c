@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 22:50:32 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/09 10:55:01 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:50:23 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_itoa(int n)
 	nb = n;
 	len = numlen(n);
 	a = malloc(sizeof(char) * (len + 1));
+	if (a == 0)
+		return (NULL);
 	if (nb < 0)
 	{
 		a[0] = '-';

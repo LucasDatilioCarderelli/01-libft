@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:35:12 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/08 22:06:46 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 22:08:34 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	len_arr = sepcounter(s, c);
 	arr = malloc(sizeof(char *) * (len_arr + 1));
+	if (!arr)
+		return (NULL);
 	fillarr(arr, len_arr, s, c);
 	return (arr);
 }

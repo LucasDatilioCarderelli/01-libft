@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 13:21:39 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/05 21:04:17 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:59:14 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
+	if (!(dest || src))
+		return (NULL);
 	d = dest;
 	s = src;
 	while (n-- > 0)

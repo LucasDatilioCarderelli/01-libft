@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 19:49:44 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/04 20:32:23 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/09 20:57:43 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
+	if (!(dest || src))
+		return (NULL);
 	d = dest;
 	s = src;
 	if (d < s)
