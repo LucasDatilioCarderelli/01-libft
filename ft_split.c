@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:35:12 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/09 22:08:34 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/11 11:07:31 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static size_t	sepcounter(char const *s, char c)
 	{
 		if (s[i] == c)
 		{
-			count++;
 			while (s[i + 1] == c && s[i + 1] != '\0')
 				i++;
+			count++;
 		}
 		i++;
 	}
@@ -39,20 +39,18 @@ static size_t	sepcounter(char const *s, char c)
 static void	fillarr(char **arr, size_t len_arr, char const *s, char c)
 {
 	size_t	idx;
-	char	*start;
 	size_t	len_word;
 
 	idx = 0;
-	start = (char *)s;
 	while (idx < len_arr)
 	{
 		len_word = 0;
-		while (*start == c && *start != 0)
-			start++;
-		while (start[len_word] != c && start[len_word] != '\0')
+		while (*s == c && *s != 0)
+			s++;
+		while (s[len_word] != c && s[len_word] != '\0')
 			len_word++;
-		arr[idx] = ft_substr(start, 0, len_word);
-		start += len_word;
+		arr[idx] = ft_substr(s, 0, len_word);
+		s += len_word;
 		idx++;
 	}
 	arr[idx] = 0;
