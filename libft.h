@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/09 19:05:39 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/11 16:16:47 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 /* ********************************* Part 1 ********************************* */
 
@@ -157,8 +163,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t destsize);
  * 			or NULL if the character is not found. */
 char	*ft_strchr(const char *s, int c);
 
-/**	@brief	Finds the end of the string `s`, then returns
- * 			a pointer to the first occurrence of the character
+/**	@brief	Finds the end of the string `s`, then returns a pointer to the
+ *			first occurrence of the character
  *			`c` in the string `s` by iterating backwards.
  *	@param	s Pointer to the string memory area
  *	@param	c Character to be searched inside the string s
@@ -189,9 +195,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //	malloc	********************************************************************
 
-/**	@brief 	Allocates memory for an array
- * 			of nmemb elements of size bytes each and returns
- * 			a pointer to the allocated memory. The memory
+/**	@brief 	Allocates memory for an array of nmemb elements of size bytes each
+ *			and returns a pointer to the allocated memory. The memory
  * 			is set to zero.
  *	@param	nmemb	Number of elements in array
  *	@param	size	Size of bytes for each element
@@ -295,5 +300,58 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /* ********************************* BONUS ********************************** */
+
+/**	@brief	Allocates and returns a new element of t_list. with the value of
+ * 			CONTENT and the variable NEXT is initialized to NULL.
+ *	@param	content the string to be created to the new t_list.
+ *	@return	returns the address of the new t_list element. */
+t_list	*ft_lstnew(void *content);
+
+/**	@brief	Add a new element to the start of the linked list appointed by lst.
+ *	@param	lst list of address of t_lists.
+ *	@param	new elemt to be add to the start of the LST. */
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/**	@brief	find the length of the linked list appointed by LST
+ *	@param	lst linked list to be count.
+ *	@return	length of LST */
+int		ft_lstsize(t_list *lst);
+
+/**	@brief	find the last element of the linked list.
+ *	@param	lst address of a linked list.
+ *	@return	the address of the linked list. */
+t_list	*ft_lstlast(t_list *lst);
+
+/**	@brief	add a new element to the linked list in the end.
+ *	@param	lst appointed a linked list.
+ *	@param	new the new element to be added. */
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
+/**	@brief	aplies the function DEL to the LST and them free the LST.
+ *	@param	lst linked element to be deleted and free.
+ *	@param	del function to delete the element. */
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**	@brief	applies the del function to the all elements of the linked list and
+ * 			the free all
+ *	@param	lst list be clear and deleted.
+ *	@param	del functions to delete the elements. */
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**	@brief	Iterates the list ’lst’ and applies the function ’f’ to the content
+ * 			of each element.
+ *	@param	lst The address of a pointer to an element.
+ *	@param	f	The address of the function used to iterate on the list. */
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**	@brief	Iterates the list ’lst’ and applies the function ’f’ to the content
+ * 			of each element. Creates a new list resulting of the successive
+ * 			applications of the function ’f’.
+ *	@param	lst The address of a pointer to an element.
+ *	@param	f	The address of the function used to iterate on the list.
+ *	@param	del The address of the function used to delete the content of an
+ * 			element if needed.
+ *	@return	The new list. NULL if the allocation fails. */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
