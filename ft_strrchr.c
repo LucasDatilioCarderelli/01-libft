@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 18:47:49 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/04 18:41:32 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/16 13:31:16 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	size_t		len;
+	int			len;
 	const char	*ini;
 
 	ini = &str[0];
