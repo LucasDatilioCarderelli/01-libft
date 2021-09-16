@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 18:47:49 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/16 13:49:09 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/16 13:52:32 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int			len;
+	int	index;
 
-	len = ft_strlen(str);
-	while (str[len] != c && len >= 0)
-		len--;
-	if (str[len] == c)
-		return ((char *)str + len);
-	return (0);
+	index = (int) ft_strlen(str);
+	while (index >= 0)
+	{
+		if (str[index] == (unsigned char) c)
+		{
+			return ((char *)str + index);
+		}
+		index--;
+	}
+	return (NULL);
 }
