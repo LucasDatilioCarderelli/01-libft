@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/01 10:39:53 by ldatilio          #+#    #+#              #
-#    Updated: 2021/09/11 21:54:48 by ldatilio         ###   ########.fr        #
+#    Updated: 2021/09/15 19:33:05 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ BONUS_O :=	$(BONUS_S:.c=.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(BONUS_O)
 			ar -rcs $(NAME) $(OBJS)
 
 bonus:		$(NAME) $(BONUS_O)
