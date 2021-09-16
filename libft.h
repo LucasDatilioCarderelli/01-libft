@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/13 23:43:35 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:56:53 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ size_t	ft_strlen(const char *s);
  * @param	src		Pointer to the source area of memory
  * @param	size	Buffer size in bytes
  * @return	size_t Returns the length of src. */
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize);
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
 
 /**	@brief	Appends the NUL-terminated string src to the end of dest.
  * 			It will append at most size - strlen(dest) - 1 bytes,
@@ -151,7 +151,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t destsize);
  * @param 	size	Buffer size in bytes
  * @return 	size_t Return the total length of the string,
  * 			that is the initial length of dest plus the length of src.*/
-size_t	ft_strlcat(char *dest, char *src, size_t destsize);
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 
 //	str		********************************************************************
 

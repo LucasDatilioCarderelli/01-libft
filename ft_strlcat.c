@@ -6,13 +6,13 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 21:11:04 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/09 19:00:58 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:43:12 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t destsize)
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
 	size_t	destlen;
 	size_t	i;
