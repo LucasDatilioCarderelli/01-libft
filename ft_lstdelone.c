@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:32:32 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/11 19:20:23 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/16 12:43:53 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst -> content);
 	free(lst);
 }
+	
