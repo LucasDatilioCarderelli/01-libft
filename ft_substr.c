@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 16:48:56 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/16 14:08:39 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/16 14:10:05 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
-	sub = ft_calloc(len + 1, sizeof(char));
-	if (sub == NULL)
-		return (NULL);
 	if (s_len <= len)
 		len = s_len - start;
 	if (start > s_len)
 		return (ft_strdup(""));
-	ft_strlcpy(sub, s + start, len + 1);
+	sub = ft_calloc(len + 1, sizeof(char));
+	if (sub == NULL)
+		return (NULL);
+	else
+		ft_strlcpy(sub, s + start, len + 1);
 	return (sub);
 }
