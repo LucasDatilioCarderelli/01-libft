@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 18:35:12 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/11 11:07:31 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/16 14:33:55 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static void	fillarr(char **arr, size_t len_arr, char const *s, char c)
 		s += len_word;
 		idx++;
 	}
-	arr[idx] = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -61,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	size_t	len_arr;
 	char	**arr;
 
-	if (!(s || c))
+	if (!s)
 		return (0);
 	len_arr = sepcounter(s, c);
 	arr = malloc(sizeof(char *) * (len_arr + 1));
