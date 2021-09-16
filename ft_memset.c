@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 10:50:55 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/04 12:08:44 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:07:13 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (((char *)s)[i] != '\0' && i < n)
+	while (i < n)
 	{
-		((char *)s)[i] = c;
+		((unsigned char *)s)[i] = c;
 		i++;
 	}
 	return (s);
