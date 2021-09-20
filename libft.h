@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:35:20 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/09/15 20:56:53 by ldatilio         ###   ########.fr       */
+/*   Updated: 2021/09/20 14:29:33 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,16 @@ void	ft_bzero(void *s, size_t n);
  *	@param	n		Buffer size in bytes */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
-/*
-**	@brief	Copies no more than n bytes from memory area src to memory
+/**	@brief	Copies no more than n bytes from memory area src to memory
  *  		area dest, stopping when the character c is found.
- * @param	dest Destination pointer of memory area
- * @param	src Source pointer of memory area
- * @param	c Character to be searched
- * @param	n Buffer size
+ * 			If the memory areas overlap, the results are undefined.
+ * @param	dest	Destination pointer of memory area
+ * @param	src		Source pointer of memory area
+ * @param	c		Character to be searched
+ * @param	n		Buffer size
  * @return	void* Returns pointer to the next character in dest after c,
- * 			or NULL if c was not found in the first n characters of src.
+ * 			or NULL if c was not found in the first n characters of src. */
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-*/
 
 /**	@brief	Copies n bytes from memory area src to memory area dest.
  *	@param	dest	Destination pointer of memory area
